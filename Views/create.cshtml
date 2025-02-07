@@ -1,0 +1,16 @@
+﻿@model VintageGroupCar.Models.Raduno
+
+<h2>Crea un nuovo Raduno</h2>
+
+<form method="post" enctype="multipart/form-data">
+    <label>Titolo</label>
+    <input type="text" name="Titolo" required />
+
+    <label>Descrizione</label>
+    <textarea name="Descrizione" required></textarea>
+
+    <label>Immagine</label>
+    <input type="file" name="immagineFile" accept="image/*" />
+
+    <button type="submit">Salva</button>
+</form>

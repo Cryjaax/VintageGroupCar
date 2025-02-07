@@ -1,35 +1,30 @@
-using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using VintageGroupCar.Dal;
 using VintageGroupCar.Models;
 
 namespace VintageGroupCar.Controllers
 {
-    public class HomeController : Controller
+    public class RaduniController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         private readonly AppDbContext _dbContext;
 
-        public HomeController(ILogger<HomeController> logger)
+        public RaduniController(AppDbContext dbContext)
         {
-            _logger = logger;
+            _dbContext = dbContext;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var raduni = _dbContext.Raduni.ToList();
+            return View(raduni);
         }
 
-        public IActionResult Privacy()
+        [HttpGet]
+        public IActionResult Create()
         {
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
         [HttpPost]
         public IActionResult Create(Raduno model, IFormFile immagineFile)
         {
@@ -47,6 +42,5 @@ namespace VintageGroupCar.Controllers
 
             return RedirectToAction("Index");
         }
-
     }
 }
