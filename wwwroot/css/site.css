@@ -1,35 +1,85 @@
+    @media (min-width: 1200px) {
+        .raduni-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+            padding: 20px;
+            width:100%
+        }
+    }
+
+
 .raduni-container {
+    width: 100%; padding: 20px;
+}
+    
+container{
+    width:100%
+}
+.raduno-card-containing {
     display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    padding: 20px;
+    gap: 16px;
+    grid-template-columns: 50% auto;
+}
+.raduno-card {
+    display: grid;
+    background: linear-gradient(-50deg, #883f3f,#FFFFFF 25%, #31A84F 70%);
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s;
+    margin:25px;
+
 }
 
-.raduno-card {
-    background: linear-gradient(to right, green, white, red);
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-    text-align: center;
-}
+    .raduno-card:hover {
+        transform: translateY(-5px);
+    }
 
     .raduno-card img {
         width: 100%;
-        max-height: 200px;
-        object-fit: cover;
-        margin-top: 10px;
+        height: auto;
+        border-radius: 10px;
     }
-
-button {
-    margin-top: 10px;
-    padding: 10px 15px;
-    background-color: black;
+.raduno-button {
+    background-color: #007bff;
     color: white;
     border: none;
-    cursor: pointer;
+    padding: 10px 15px;
     border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+   position:center
+   
+}
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
 }
 
     button:hover {
-        background-color: darkred;
+        background-color: #0056b3;
     }
+h2 {
+    font-size: 4rem;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+h3 {
+    margin-top:5px;
+    font-size: 2rem;
+    text-align: center;
+    color: #333;
+    margin-bottom: 23px;
+}
+p{
+    font-size:15px
+}

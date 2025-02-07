@@ -40,7 +40,7 @@ namespace VintageGroupCar.Controllers
             _dbContext.Raduni.Add(model);
             _dbContext.SaveChanges();
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Home");
         }
     }
 }

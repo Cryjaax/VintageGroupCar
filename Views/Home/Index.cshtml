@@ -2,19 +2,36 @@
 
 <h2>Notizie Su Gli Ultimi Raduni</h2>
 
+
 <div class="raduni-container">
-    @foreach (var raduno in Model)
+    @if (Model == null || !Model.Any())
     {
-        <div class="raduno-card">
-            <h3>@raduno.Titolo</h3>
-            <p>@raduno.Descrizione</p>
+        <p>Nessun raduno disponibile al momento.</p>
 
-            @if (raduno.Immagine != null)
+    }
+    else
+    {
+        <div class="raduni-container">
+            @foreach (var raduno in Model)
             {
-                <img src="data:image/jpeg;base64,@Convert.ToBase64String(raduno.Immagine)" alt="@raduno.Titolo" />
-            }
+                <div class="raduno-card">
+                    
+                    <div class="raduno-card-containing">
+                        <div>
+                            <h3> @raduno.Titolo</h3>
+                            <p>@raduno.Descrizione</p>
+                        </div>
 
-            <button>Scopri di più</button>
+                    @if (raduno.Immagine != null)
+                    {
+                        <img src="data:image/jpeg;base64,@Convert.ToBase64String(raduno.Immagine)" alt="@raduno.Titolo" />
+                    }
+
+                </div>
+                    <button class="raduno-button">Scopri di più</button>
+                </div>
+            }
+            <button onclick="location.href='@Url.Action("Create", "Raduni")'">Crea un nuovo raduno</button>
+
         </div>
     }
-</div>
